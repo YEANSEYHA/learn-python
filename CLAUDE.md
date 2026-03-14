@@ -33,3 +33,5 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
 ## Current Progress
 - Module 1: In progress
   - Loops: ✓ Complete (for, range, while, enumerate, zip, break/continue, list comprehension)
+  - Loop Practice: ✓ 4/4 problems solved
+  - Next up: Functions, Conditionals, Dictionaries, Classes, String methods
