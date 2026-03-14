@@ -32,4 +32,4 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
 
 ## Current Progress
 - Module 1: In progress
-  - Loops: Topic 1 (for loop) ✓ | Topic 2 (range) in progress
+  - Loops: ✓ Complete (for, range, while, enumerate, zip, break/continue, list comprehension)
