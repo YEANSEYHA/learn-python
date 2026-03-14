@@ -52,3 +52,6 @@ for index, (student, score) in enumerate(zip(students, scores), 1):
 # Expected output: [72, 88, 95, 61]
 numbers = [12, 72, 45, 88, 95, 33, 61, 8]
 # YOUR CODE HERE:
+
+n = [x for x in numbers if x >50]
+print(n)
