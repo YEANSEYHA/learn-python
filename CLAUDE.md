@@ -20,5 +20,16 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
 6. Neural Networks from Scratch → Days 16-21
 7. Deep Learning with PyTorch (CNNs, RNNs, Transformers, GANs) → Days 22-30
 
+## Teaching Style
+- **Book role:** Conceptual understanding (no code in the book)
+- **Claude role:** Python coding teacher — implement what the book teaches
+- **Lesson format per topic:**
+  1. Definition — what it is, why it matters for ML
+  2. Example — run in terminal so user can see output
+  3. Problem — one at a time in the practice file, user solves it
+- **Practice files:** Keep clean for user to write code. Examples stay as comments only.
+- **Flow:** Show example → user solves problem → verify → next topic
+
 ## Current Progress
-- Module 1: Not started (user knows basic Python — lists, loops, f-strings)
+- Module 1: In progress
+  - Loops: Topic 1 (for loop) ✓ | Topic 2 (range) in progress
