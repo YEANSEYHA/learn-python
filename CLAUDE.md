@@ -34,4 +34,6 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
 - Module 1: In progress
   - Loops: ✓ Complete (for, range, while, enumerate, zip, break/continue, list comprehension)
   - Loop Practice: ✓ 4/4 problems solved
-  - Next up: Functions, Conditionals, Dictionaries, Classes, String methods
+  - Functions: ✓ Complete (def, default params, return multiple values, lambda)
+  - Functions Practice: ✓ 4/4 problems solved
+  - Next up: Conditionals, Dictionaries, Classes, String methods
