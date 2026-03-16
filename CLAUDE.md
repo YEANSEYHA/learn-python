@@ -36,4 +36,7 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Loop Practice: ✓ 4/4 problems solved
   - Functions: ✓ Complete (def, default params, return multiple values, lambda)
   - Functions Practice: ✓ 4/4 problems solved
-  - Next up: Conditionals, Dictionaries, Classes, String methods
+  - Conditionals: ✓ Complete (if/elif/else, logical ops, falsy values)
+  - Dictionaries: ✓ Complete
+  - Classes: In progress (3/4 problems solved — BankAccount, Dataset, SmartAccount/inheritance)
+  - Next up: Classes Problem 4, String methods
