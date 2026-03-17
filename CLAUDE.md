@@ -25,10 +25,11 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
 - **Claude role:** Python coding teacher — implement what the book teaches
 - **Lesson format per topic:**
   1. Definition — what it is, why it matters for ML
-  2. Example — run in terminal so user can see output
-  3. Problem — one at a time in the practice file, user solves it
+  2. Example Visual — ASCII/text diagram showing the concept
+  3. Example how it works — runnable code with output
+  4. Exercise — generate 1 problem at a time, next after user completes it
 - **Practice files:** Keep clean for user to write code. Examples stay as comments only.
-- **Flow:** Show example → user solves problem → verify → next topic
+- **Flow:** Definition → Visual → Example → solve problem → verify → next problem → next topic
 
 ## Current Progress
 - Module 1: ✓ Complete
@@ -40,4 +41,6 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Dictionaries: ✓ Complete
   - Classes: ✓ Complete (BankAccount, Dataset, SmartAccount/inheritance)
   - String Methods: ✓ Complete (strip, split, join, replace, f-string formatting)
-- Module 2: Next up (NumPy)
+- Module 2: In Progress (NumPy)
+  - Arrays (creation, shapes, dtypes): ✓ Complete (4/4 problems)
+  - Indexing, Slicing, Boolean Masks: In Progress (2/3 problems done)
