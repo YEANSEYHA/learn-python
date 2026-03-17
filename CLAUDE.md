@@ -31,12 +31,13 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
 - **Flow:** Show example → user solves problem → verify → next topic
 
 ## Current Progress
-- Module 1: In progress
+- Module 1: ✓ Complete
   - Loops: ✓ Complete (for, range, while, enumerate, zip, break/continue, list comprehension)
   - Loop Practice: ✓ 4/4 problems solved
   - Functions: ✓ Complete (def, default params, return multiple values, lambda)
   - Functions Practice: ✓ 4/4 problems solved
   - Conditionals: ✓ Complete (if/elif/else, logical ops, falsy values)
   - Dictionaries: ✓ Complete
-  - Classes: In progress (3/4 problems solved — BankAccount, Dataset, SmartAccount/inheritance)
-  - Next up: Classes Problem 4, String methods
+  - Classes: ✓ Complete (BankAccount, Dataset, SmartAccount/inheritance)
+  - String Methods: ✓ Complete (strip, split, join, replace, f-string formatting)
+- Module 2: Next up (NumPy)
