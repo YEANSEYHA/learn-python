@@ -62,3 +62,13 @@ print(grades[:, 1])  # → [92, 65, 88]
 
 # c) Print the top-left 2x2 block (first 2 students, first 2 tests)
 print(grades[:2,:2])
+
+# Problem 3: Boolean Masking
+data = np.array([3, -1, 7, -4, 2, -8, 5, 0, -3, 6])
+# a) Print only the negative values
+print(data[data < 0])
+# b) Print only values greater than 4
+print(data[data > 4])
+# c) Replace all negative values with 0 and print (hint: data[condition] = value)
+data[data < 0] = 0
+print(data)

@@ -43,4 +43,6 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - String Methods: ✓ Complete (strip, split, join, replace, f-string formatting)
 - Module 2: In Progress (NumPy)
   - Arrays (creation, shapes, dtypes): ✓ Complete (4/4 problems)
-  - Indexing, Slicing, Boolean Masks: In Progress (2/3 problems done)
+  - Indexing, Slicing, Boolean Masks: ✓ Complete (3/3 problems)
+  - Reshaping & Broadcasting: ✓ Complete (3/3 problems)
+  - Math Operations: ✓ Complete (3/3 problems)
