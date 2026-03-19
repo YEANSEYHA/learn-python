@@ -47,4 +47,8 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Reshaping & Broadcasting: ✓ Complete (3/3 problems)
   - Math Operations: ✓ Complete (3/3 problems)
 - Module 3: In Progress (Statistics & Probability)
-  - Descriptive Stats (mean, median, std, variance): In Progress (1/3 problems)
+  - Descriptive Stats (mean, median, std, variance, z-score, IQR outliers): ✓ Complete (3/3 problems)
+  - Probability Distributions: Skipped for now (1/3 problems done)
+  - Conditional & Joint Probability: Skipped for now
+  - Bayes' Rule: Skipped for now
+  - Confusion Matrix, Precision, Recall, F1: In Progress (1/3 problems)
