@@ -33,3 +33,23 @@ print(precision)
 print(recall)
 print(f1)
 print(maxtrix)
+
+
+# PROBLEM 2: Threshold Tuning
+# A model outputs confidence scores (0.0 to 1.0) for 15 patients.
+# You decide the threshold: score >= threshold → predict positive (1)
+#
+# Try 3 thresholds: 0.3 (aggressive), 0.5 (default), 0.7 (cautious)
+# For EACH threshold:
+#   - Convert scores to predictions (1 if score >= threshold, else 0)
+#   - Calculate Precision, Recall, and F1
+#   - Print results
+#
+# Which threshold is best if this is a cancer test? (hint: don't miss sick patients)
+
+actual_labels = np.array([1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1])
+model_scores  = np.array([0.9, 0.3, 0.8, 0.6, 0.2, 0.7, 0.4, 0.1, 0.95, 0.35, 0.55, 0.15, 0.8, 0.75, 0.3])
+
+thresholds = [0.3, 0.5, 0.7]
+
+# Your code below:
