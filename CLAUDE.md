@@ -41,8 +41,10 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Dictionaries: ✓ Complete
   - Classes: ✓ Complete (BankAccount, Dataset, SmartAccount/inheritance)
   - String Methods: ✓ Complete (strip, split, join, replace, f-string formatting)
-- Module 2: In Progress (NumPy)
+- Module 2: ✓ Complete
   - Arrays (creation, shapes, dtypes): ✓ Complete (4/4 problems)
   - Indexing, Slicing, Boolean Masks: ✓ Complete (3/3 problems)
   - Reshaping & Broadcasting: ✓ Complete (3/3 problems)
   - Math Operations: ✓ Complete (3/3 problems)
+- Module 3: In Progress (Statistics & Probability)
+  - Descriptive Stats (mean, median, std, variance): In Progress (1/3 problems)
