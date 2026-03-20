@@ -1,80 +1,112 @@
 import numpy as np
 
 # ============================================================
-# TOPIC: Conditional & Joint Probability
+# TOPIC: Probability (Beginner Friendly)
 # ============================================================
 #
-# WHAT:
-#   Probability      = how likely something happens (0 to 1)
-#   Joint Prob       = P(A AND B) — both events happen together
-#   Conditional Prob = P(A | B)   — probability of A, GIVEN B already happened
+# 3 formulas. That's all.
 #
-# WHY FOR ML:
-#   - Bayes classifiers: "what's P(spam | contains 'free money')?"
-#   - Neural networks learn P(output | input)
-#   - Every prediction is a conditional probability
+#   1. P(A)         = count of A / total       "how common is A?"
+#   2. P(A AND B)   = count of both / total    "how often do both happen?"
+#   3. P(A | B)     = P(A AND B) / P(B)        "if B happened, how likely is A?"
 #
-# KEY FORMULAS:
-#   P(A)           = count(A) / total
-#   P(A AND B)     = count(A and B) / total
-#   P(A | B)       = P(A AND B) / P(B)
+# NumPy trick:
+#   np.mean(array)  on 0s and 1s = probability!
+#   Because: (0+0+1+0+1) / 5 = 2/5 = 0.40 = P(A)
+#
+# ============================================================
+
+
+# PROBLEM 1: Basic Probability — P(A)
+# ============================================================
+# A classroom has 20 students. Each student either passed (1) or failed (0).
+#
+# Calculate:  What fraction of students passed?
 #
 # VISUAL:
-#
-#   Imagine 100 emails:
-#
-#                    has "free"?
-#                    YES     NO
-#                  ┌──────┬──────┐
-#   SPAM     YES   │  20  │  10  │  30  (spam total)
-#                  ├──────┼──────┤
-#            NO    │   5  │  65  │  70  (not spam total)
-#                  └──────┴──────┘
-#                    25      75     100
-#
-#   Read from the table:
-#   P(spam)                = 30 / 100 = 0.30
-#   P(has "free")          = 25 / 100 = 0.25
-#   P(spam AND "free")     = 20 / 100 = 0.20   ← top-left cell / total
-#   P(spam | "free")       = 20 / 25  = 0.80   ← top-left cell / column total
-#                                        ↑ if it has "free", 80% chance spam!
-#
-# EXAMPLE:
-#   # Simulating with data
-#   total = 1000
-#   is_spam = np.random.choice([0, 1], size=total, p=[0.7, 0.3])
-#   has_free = np.where(is_spam == 1,
-#                       np.random.choice([0, 1], size=total, p=[0.3, 0.7]),
-#                       np.random.choice([0, 1], size=total, p=[0.9, 0.1]))
-#
-#   p_spam = np.mean(is_spam)                              # ≈ 0.30
-#   p_free = np.mean(has_free)                             # ≈ 0.28
-#   p_spam_and_free = np.mean((is_spam == 1) & (has_free == 1))  # ≈ 0.21
-#   p_spam_given_free = p_spam_and_free / p_free           # ≈ 0.75
-# ============================================================
+#   students: [1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1]
+#             pass     fail
+#             ████████████   ██████
+#              14 passed     6 failed     → P(pass) = 14/20 = 0.70
 
-# PROBLEM 1: Medical Test Probability
-# A hospital tested 10,000 patients for a disease.
-# The data arrays below tell you:
-#   has_disease: 1 = has disease, 0 = healthy
-#   test_result: 1 = tested positive, 0 = tested negative
-#
-# Calculate and print:
-#   1. P(disease)              — what fraction are actually sick?
-#   2. P(positive)             — what fraction tested positive?
-#   3. P(disease AND positive) — sick AND tested positive
-#   4. P(disease | positive)   — if someone tests positive, what's the
-#                                 chance they're actually sick?
-#   5. P(positive | disease)   — if someone IS sick, what's the chance
-#                                 the test catches it? (sensitivity)
-#   6. P(positive | no disease) — false positive rate
+results = np.array([1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1])
 
-np.random.seed(42)
-n = 10000
-
-has_disease = np.random.choice([0, 1], size=n, p=[0.95, 0.05])
-test_result = np.where(has_disease == 1,
-                       np.random.choice([0, 1], size=n, p=[0.1, 0.9]),
-                       np.random.choice([0, 1], size=n, p=[0.92, 0.08]))
-
+# Print: "P(pass) = ___"
 # Your code below:
+
+pa = np.mean(results)
+print(pa)
+
+
+# PROBLEM 2: Joint Probability — P(A AND B)
+# ============================================================
+# A class has 20 students. We know two things about each:
+#   passed:  1 = passed the exam, 0 = failed
+#   studied: 1 = studied,         0 = didn't study
+#
+# Calculate: What fraction both studied AND passed?
+#
+# VISUAL:
+#                        passed?
+#                      YES     NO
+#                    ┌──────┬──────┐
+#   studied?  YES    │  10  │   2  │  12
+#                    ├──────┼──────┤
+#             NO     │   4  │   4  │   8
+#                    └──────┴──────┘
+#                      14      6      20
+#
+#   P(studied AND passed) = 10 / 20 = 0.50
+#
+# HINT: Use & to combine two conditions:
+#   np.mean((array1 == 1) & (array2 == 1))
+
+passed  = np.array([1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1])
+studied = np.array([1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1])
+
+# Print: "P(studied AND passed) = ___"
+# Your code below:
+
+p_study_pass = np.mean((passed == 1) & (studied ==1))
+print(f"P(studied AND passed) {p_study_pass}")
+
+
+# PROBLEM 3: Conditional Probability — P(A | B)
+# ============================================================
+# Using the SAME passed and studied arrays from Problem 2.
+#
+# Question: If a student STUDIED, what's the chance they passed?
+#           → P(passed | studied)
+#
+# VISUAL:
+#   All 20 students
+#   ┌──────────────────────────────────────┐
+#   │ o o o o o o o o o o o o o o o o o o o│
+#   └──────────────────────────────────────┘
+#           ↓ filter: only students who studied (12)
+#   ┌─────────────────────────┐
+#   │ o o o o o o o o o o o o │
+#   └─────────────────────────┘
+#           ↓ of those, how many passed? (10)
+#   ┌────────────────────┐
+#   │ o o o o o o o o o o│
+#   └────────────────────┘
+#
+#   P(passed | studied) = 10 / 12 = 0.8333
+#
+# FORMULA:
+#   P(A | B) = P(A AND B) / P(B)
+#
+# You already have P(A AND B) from Problem 2.
+# You just need P(studied), then divide.
+
+# Print: "P(passed | studied) = ___"
+# Your code below:
+
+p_studied = np.mean(studied == 1)
+print(p_studied)
+
+p_a_b = p_study_pass/p_studied
+
+print(p_a_b)
+

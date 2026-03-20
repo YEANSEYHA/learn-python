@@ -31,6 +31,13 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
 - **Practice files:** Keep clean for user to write code. Examples stay as comments only.
 - **Flow:** Definition → Visual → Example → solve problem → verify → next problem → next topic
 
+## Problem Difficulty Rules
+- **Start beginner-friendly:** Each problem focuses on ONE core concept only
+- **Keep problems small:** 1-3 lines of code to solve, not 6+ sub-questions
+- **Build up gradually:** Problem 1 = simplest form → Problem 2 = adds one layer → Problem 3 = combines concepts
+- **Do NOT overload:** Never put multiple concepts in a single problem. If a topic has 3 formulas, make 3 separate problems (one per formula)
+- **Explain before asking:** Always give the summary lesson, key formulas, and a visual BEFORE the first problem
+
 ## Current Progress
 - Module 1: ✓ Complete
   - Loops: ✓ Complete (for, range, while, enumerate, zip, break/continue, list comprehension)
@@ -49,6 +56,6 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
 - Module 3: In Progress (Statistics & Probability)
   - Descriptive Stats (mean, median, std, variance, z-score, IQR outliers): ✓ Complete (3/3 problems)
   - Probability Distributions: Skipped for now (1/3 problems done)
-  - Conditional & Joint Probability: Skipped for now
-  - Bayes' Rule: Skipped for now
+  - Conditional & Joint Probability: ✓ Complete (3/3 problems — P(A), P(A AND B), P(A|B))
+  - Bayes' Rule: ✓ Complete (2/2 problems — formula + NumPy data)
   - Confusion Matrix, Precision, Recall, F1: In Progress (1/3 problems)
