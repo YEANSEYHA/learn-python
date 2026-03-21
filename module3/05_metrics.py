@@ -53,3 +53,73 @@ model_scores  = np.array([0.9, 0.3, 0.8, 0.6, 0.2, 0.7, 0.4, 0.1, 0.95, 0.35, 0.
 thresholds = [0.3, 0.5, 0.7]
 
 # Your code below:
+
+for threshold in thresholds:
+
+    predictions = (model_scores >= threshold).astype(int)
+
+    tp = np.sum((actual_labels == 1) & (predictions == 1))
+    fn = np.sum((actual_labels == 1) & (predictions == 0))
+    fp = np.sum((actual_labels == 0) & (predictions == 1))
+    tn = np.sum((actual_labels == 0) & (predictions == 0))
+
+    precision = tp/(tp+fp)
+    recall = tp/(tp+fn)
+    f1 = 2*(precision*recall)/(precision+recall)
+
+    print(f"Threshold {threshold}: Precision={precision:.2f} Recall={recall:.2f} F1={f1:.2f}")
+
+
+# PROBLEM 3: Compare Two Models
+# Two models made predictions on the same 12 patients.
+# Calculate Precision, Recall, and F1 for EACH model.
+# Then print which model is better for:
+#   a) A cancer screening test (prioritize catching all sick patients)
+#   b) A spam filter (prioritize not marking real emails as spam)
+#
+# Hint: (a) wants high Recall, (b) wants high Precision
+
+actual3   = np.array([1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1])
+model_a   = np.array([1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1])
+model_b   = np.array([1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1])
+
+# Your code below:
+
+# Model A Result
+
+tp = np.sum((actual3 == 1) & (model_a == 1))
+tn = np.sum((actual3 == 0) & (model_a == 0))
+
+fp = np.sum((actual3 == 0) & (model_a == 1))
+fn = np.sum((actual3 == 1) & (model_a == 0))
+
+precision = tp / (tp + fp)
+print(precision)
+recall = tp/(tp+fn)
+print(f"Recall {recall}")
+
+f1 = 2*(precision*recall)/(precision+recall)
+
+print(f"F1 Model A:{f1:.2f}")
+
+
+# Model B Result
+
+tp = np.sum((actual3 == 1) & (model_b == 1))
+tn = np.sum((actual3 == 0) & (model_b == 0))
+
+fp = np.sum((actual3 == 0) & (model_b == 1))
+fn = np.sum((actual3 == 1) & (model_b == 0))
+
+precision = tp / (tp + fp)
+print(precision)
+recall = tp/(tp+fn)
+print(f"Recall {recall}")
+
+f1 = 2*(precision*recall)/(precision+recall)
+
+print(f"F1 Model B:{f1:.2f}")
+
+print("MOdel A is Better Recall than model B")
+
+print("Model B is have high Precison than Model A")
