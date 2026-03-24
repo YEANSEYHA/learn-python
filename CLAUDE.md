@@ -63,3 +63,4 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Information Theory (Entropy, KL Divergence): ✓ Complete (3/3 problems)
 - Module 4: In Progress (Visualization with Matplotlib)
   - Line Plots & Scatter Plots: ✓ Complete (3/3 problems)
+  - Histograms & Heatmaps: ✓ Complete (3/3 problems)
