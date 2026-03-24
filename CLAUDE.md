@@ -53,11 +53,11 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Indexing, Slicing, Boolean Masks: ✓ Complete (3/3 problems)
   - Reshaping & Broadcasting: ✓ Complete (3/3 problems)
   - Math Operations: ✓ Complete (3/3 problems)
-- Module 3: In Progress (Statistics & Probability)
+- Module 3: ✓ Complete (Statistics & Probability)
   - Descriptive Stats (mean, median, std, variance, z-score, IQR outliers): ✓ Complete (3/3 problems)
   - Probability Distributions: Skipped for now (1/3 problems done)
   - Conditional & Joint Probability: ✓ Complete (3/3 problems — P(A), P(A AND B), P(A|B))
   - Bayes' Rule: ✓ Complete (2/2 problems — formula + NumPy data)
   - Confusion Matrix, Precision, Recall, F1: ✓ Complete (3/3 problems)
   - ROC Curves & AUC: ✓ Complete (3/3 problems)
-  - Information Theory (Entropy, KL Divergence): Not started
+  - Information Theory (Entropy, KL Divergence): ✓ Complete (3/3 problems)
