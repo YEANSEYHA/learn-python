@@ -66,3 +66,5 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Histograms & Heatmaps: ✓ Complete (3/3 problems)
   - Subplots & Multi-figure Layouts: ✓ Complete (3/3 problems)
   - Image Display & Manipulation: ✓ Complete (3/3 problems)
+- Module 5: In Progress (Classical ML with Scikit-learn)
+  - Data Pipeline (train_test_split, StandardScaler, cross-validation): ✓ Complete (3/3 problems)
