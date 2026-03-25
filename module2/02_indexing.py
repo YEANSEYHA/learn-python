@@ -4,71 +4,196 @@ import numpy as np
 # MODULE 2, TOPIC 2: Indexing, Slicing, Boolean Masks
 # ============================================================
 
-# --- EXAMPLES ---
+# --- STEP 1: 1D Indexing ---
+# An array is like a row of boxes, each with a number (index)
+#
+#   index:   0    1    2    3    4
+# array: [ 10 , 20 , 30 , 40 , 50 ]
+#          ↑                    ↑
+#        a[0]=10             a[4]=50
+#
+#   Negative index counts from the end:
+#   index:  -5   -4   -3   -2   -1
+# array: [ 10 , 20 , 30 , 40 , 50 ]
+#                              ↑
+#                          a[-1]=50
 
-# 1D Indexing & Slicing
+# --- Example ---
 a = np.array([10, 20, 30, 40, 50])
 print("Array:", a)
-print("a[0]:", a[0])           # first element
-print("a[-1]:", a[-1])         # last element
-print("a[1:4]:", a[1:4])       # index 1,2,3 (end excluded)
-print("a[:3]:", a[:3])         # first 3 elements
-print("a[::2]:", a[::2])       # every other element
+print("a[0]:", a[0])       # → 10
+print("a[2]:", a[2])       # → 30
+print("a[-1]:", a[-1])     # → 50
 
-# 2D Indexing & Slicing
+# --- Exercise ---
+# Given this array of model accuracies for 5 experiments:
+acc = np.array([0.72, 0.85, 0.91, 0.68, 0.79])
+# Print the FIRST accuracy
+# Print the THIRD accuracy
+# Print the LAST accuracy (use negative index)
+
+# Your code below:
+print(acc[0])
+
+print(acc[2])
+
+print(acc[-1])
+
+
+# --- STEP 2: 1D Slicing ---
+# Slicing grabs a RANGE of items: array[start:stop]
+# start is INCLUDED, stop is EXCLUDED
+#
+#   index:   0    1    2    3    4
+# array: [ 10 , 20 , 30 , 40 , 50 ]
+#
+# a[1:4] → items at index 1, 2, 3 → [20, 30, 40]
+#           starts at 1, stops BEFORE 4
+#
+# Shortcuts:
+#   a[:3]  → from beginning to index 2  → [10, 20, 30]
+#   a[2:]  → from index 2 to the end    → [30, 40, 50]
+
+# --- Example ---
+a = np.array([10, 20, 30, 40, 50])
+print("\n--- Slicing ---")
+print("a[1:4]:", a[1:4])   # → [20, 30, 40]
+print("a[:3]:", a[:3])     # → [10, 20, 30]
+print("a[2:]:", a[2:])     # → [30, 40, 50]
+
+# --- Exercise ---
+# Given these 6 test scores:
+scores = np.array([88, 72, 95, 61, 84, 77])
+# Print the first 3 scores
+# Print the last 3 scores
+# Print scores at index 1, 2, 3 (middle section)
+
+# Your code below:
+print(scores[:3])
+print(scores[3:])
+print(scores[1:4])
+
+
+# --- STEP 3: Step Slicing ---
+# Full syntax: array[start:stop:step]
+# step = how many to skip between picks
+#
+#   index:   0    1    2    3    4    5
+# array: [ 10 , 20 , 30 , 40 , 50 , 60 ]
+#
+# a[0::2] → start at 0, pick every 2nd → [10, 30, 50]
+#            0  skip  2  skip  4
+#
+# a[1::2] → start at 1, pick every 2nd → [20, 40, 60]
+#            1  skip  3  skip  5
+#
+# a[::-1] → step -1 = REVERSE the whole array → [60, 50, 40, 30, 20, 10]
+
+# --- Example ---
+a = np.array([10, 20, 30, 40, 50, 60])
+print("\n--- Step Slicing ---")
+print("a[0::2]:", a[0::2])   # → [10, 30, 50]  (every 2nd, start at 0)
+print("a[1::2]:", a[1::2])   # → [20, 40, 60]  (every 2nd, start at 1)
+print("a[::-1]:", a[::-1])   # → [60, 50, 40, 30, 20, 10]  (reversed)
+
+# --- Exercise ---
+# Given these 8 training losses:
+losses = np.array([2.5, 2.1, 1.8, 1.5, 1.2, 0.9, 0.6, 0.3])
+#  index:            0    1    2    3    4    5    6    7
+# Print every other loss starting from index 0 (0, 2, 4, 6)
+# Print every other loss starting from index 1 (1, 3, 5, 7)
+# Print the losses in reverse order
+
+# Your code below:
+print(losses[0::2])
+print(losses[1::2])
+print(losses[::-1])
+
+
+# --- STEP 4: 2D Indexing ---
+# A 2D array has ROWS and COLUMNS
+# Access with: array[row, column]
+#
+#            col 0  col 1  col 2
+# row 0  [[  1  ,   2  ,   3  ],
+# row 1   [  4  ,   5  ,   6  ],
+# row 2   [  7  ,   8  ,   9  ]]
+#
+# b[0, 2] → row 0, col 2 → 3
+# b[1, 1] → row 1, col 1 → 5
+#
+# Grab a whole ROW:    b[1, :]  → [4, 5, 6]    (row 1, ALL columns)
+# Grab a whole COLUMN: b[:, 2]  → [3, 6, 9]    (ALL rows, col 2)
+#
+# The comma separates [rows, columns]
+# The colon : means "all"
+
+# --- Example ---
 b = np.array([[1, 2, 3],
               [4, 5, 6],
               [7, 8, 9]])
-print("\n2D Array:\n", b)
-print("b[0, 2]:", b[0, 2])       # row 0, col 2 → 3
-print("b[1, :]:", b[1, :])       # entire row 1 → [4, 5, 6]
-print("b[:, 1]:", b[:, 1])       # entire col 1 → [2, 5, 8]
-print("b[:2, :2]:\n", b[:2, :2]) # top-left 2x2 block
+print("\n--- 2D Indexing ---")
+print("b[0, 2]:", b[0, 2])    # → 3
+print("b[1, :]:", b[1, :])    # → [4, 5, 6]  (row 1, all cols)
+print("b[:, 2]:", b[:, 2])    # → [3, 6, 9]  (all rows, col 2)
 
-# Boolean Masking — filter by condition
-print("\n--- Boolean Masking ---")
-scores = np.array([45, 82, 67, 91, 55, 73])
-print("Scores:", scores)
-print("scores > 70:", scores > 70)          # [False, True, False, True, False, True]
-print("Passing:", scores[scores > 70])      # [82, 91, 73] — only values > 70
-
-# Real ML use: filter out negative values (like ReLU does!)
-data = np.array([-2, 3, -1, 5, 0, -4, 7])
-print("\nData:", data)
-print("Positive only:", data[data > 0])     # [3, 5, 7]
-
-
-# ============================================================
-# PROBLEMS — solve below
-# ============================================================
-
-# Problem 1: Given this array of model predictions:
-predictions = np.array([0.12, 0.89, 0.45, 0.93, 0.31, 0.78, 0.05, 0.67])
-# a) Print the first 3 predictions
-print(predictions[:3])
-# b) Print the last 2 predictions
-print(predictions[-2:])
-# c) Print every other prediction starting from index 0
-print(predictions[::2])
-
-# Problem 2: Given this 2D array (3 students, 4 test scores each):
+# --- Exercise ---
+# Given 3 students' scores on 4 tests:
 grades = np.array([[85, 92, 78, 90],
                    [70, 65, 80, 72],
                    [95, 88, 91, 97]])
-# a) Print student 2's scores (row index 2)
-print(grades[1])
-# b) Print all students' scores on test 1 (column index 1)
-print(grades[:, 1])  # → [92, 65, 88]
+#          test:    0   1   2   3
+# student 0:      85  92  78  90
+# student 1:      70  65  80  72
+# student 2:      95  88  91  97
+#
+# Print student 1's all scores (row 1, all columns)
+# Print everyone's test 3 scores (all rows, column 3)
+# Print the single value: student 2, test 1
 
-# c) Print the top-left 2x2 block (first 2 students, first 2 tests)
-print(grades[:2,:2])
+# Your code below:
+print(grades[1, :])
+print(grades[:,3])
+print(grades[2,1])
 
-# Problem 3: Boolean Masking
-data = np.array([3, -1, 7, -4, 2, -8, 5, 0, -3, 6])
-# a) Print only the negative values
-print(data[data < 0])
-# b) Print only values greater than 4
-print(data[data > 4])
-# c) Replace all negative values with 0 and print (hint: data[condition] = value)
-data[data < 0] = 0
-print(data)
+
+# --- STEP 5: 2D Slicing ---
+# You can use slicing on EACH dimension separately!
+# array[row_slice, col_slice]
+#
+#            col 0  col 1  col 2
+# row 0  [[  1  ,   2  ,   3  ],
+# row 1   [  4  ,   5  ,   6  ],
+# row 2   [  7  ,   8  ,   9  ]]
+#
+# b[:2, :2]   → rows 0,1 + cols 0,1 → [[1,2],[4,5]]   (top-left block)
+# b[:, ::-1]  → all rows + reverse cols → [[3,2,1],[6,5,4],[9,8,7]]
+# b[::-1]     → reverse rows → [[7,8,9],[4,5,6],[1,2,3]]
+#
+# Think of it as: [what to do with rows, what to do with columns]
+
+# --- Example ---
+b = np.array([[1, 2, 3],
+              [4, 5, 6],
+              [7, 8, 9]])
+print("\n--- 2D Slicing ---")
+print("Top-left 2x2:\n", b[:2, :2])     # rows 0-1, cols 0-1
+print("Reverse cols:\n", b[:, ::-1])     # all rows, flip columns
+print("Reverse rows:\n", b[::-1])        # flip rows, keep columns
+
+# --- Exercise ---
+# Same grades array:
+# grades = [[85, 92, 78, 90],
+#            [70, 65, 80, 72],
+#            [95, 88, 91, 97]]
+#
+# Print the top-left 2x3 block (first 2 students, first 3 tests)
+# Print all grades with columns reversed (test 3 first, test 0 last)
+# Print all grades with rows reversed (student 2 first, student 0 last)
+
+# Your code below:
+
+# print(grades[:2,:3])
+# print(grades[:,::-1])
+print(grades[::-1,:])
+
