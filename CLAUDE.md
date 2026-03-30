@@ -71,3 +71,4 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Overfitting & Underfitting (bias-variance, gap detection, early stopping): ✓ Complete (3/3 problems)
   - Linear Regression (single & multiple features, MSE, R-squared): ✓ Complete (3/3 problems)
   - Logistic Regression (sigmoid, classification, confusion matrix): ✓ Complete (3/3 problems)
+  - k-Nearest Neighbors (KNN, distance, scaling, regression): ✓ Complete (3/3 problems)
