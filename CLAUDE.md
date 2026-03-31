@@ -67,7 +67,7 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Histograms & Heatmaps: ✓ Complete (3/3 problems)
   - Subplots & Multi-figure Layouts: ✓ Complete (3/3 problems)
   - Image Display & Manipulation: ✓ Complete (3/3 problems)
-- Module 5: In Progress (Classical ML with Scikit-learn)
+- Module 5: ✓ Complete (Classical ML with Scikit-learn)
   - Data Pipeline (train_test_split, StandardScaler, cross-validation): ✓ Complete (3/3 problems)
   - Overfitting & Underfitting (bias-variance, gap detection, early stopping): ✓ Complete (3/3 problems)
   - Linear Regression (single & multiple features, MSE, R-squared): ✓ Complete (3/3 problems)
@@ -75,3 +75,4 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - k-Nearest Neighbors (KNN, distance, scaling, regression): ✓ Complete (3/3 problems)
   - Decision Trees & Random Forests (Gini impurity, overfitting, ensembles): ✓ Complete (3/3 problems)
   - Support Vector Machines (scaling, C parameter, support vectors): ✓ Complete (3/3 problems)
+  - Gradient Descent from Scratch (learning rate, linear regression, loss tracking): ✓ Complete (3/3 problems)
