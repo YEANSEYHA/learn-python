@@ -37,6 +37,7 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
 - **Build up gradually:** Problem 1 = simplest form → Problem 2 = adds one layer → Problem 3 = combines concepts
 - **Do NOT overload:** Never put multiple concepts in a single problem. If a topic has 3 formulas, make 3 separate problems (one per formula)
 - **Explain before asking:** Always give the summary lesson, key formulas, and a visual BEFORE the first problem
+- **No repetitive exercises:** If the example already demonstrates a concept, do NOT make an exercise that repeats it. Each exercise must teach a NEW concept (new parameter, new technique) not just re-run the example with different data.
 
 ## Current Progress
 - Module 1: ✓ Complete
@@ -72,3 +73,5 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Linear Regression (single & multiple features, MSE, R-squared): ✓ Complete (3/3 problems)
   - Logistic Regression (sigmoid, classification, confusion matrix): ✓ Complete (3/3 problems)
   - k-Nearest Neighbors (KNN, distance, scaling, regression): ✓ Complete (3/3 problems)
+  - Decision Trees & Random Forests (Gini impurity, overfitting, ensembles): ✓ Complete (3/3 problems)
+  - Support Vector Machines (scaling, C parameter, support vectors): ✓ Complete (3/3 problems)
