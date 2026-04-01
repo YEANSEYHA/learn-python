@@ -71,6 +71,8 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
 - Module 6: In Progress (Neural Networks from Scratch)
   - Perceptron & Neurons (weighted sum, layer of neurons, AND gate): ✓ Complete (3/3 problems)
   - Activation Functions (ReLU, Sigmoid, Softmax): ✓ Complete (3/3 problems)
+  - Forward Pass (single sample, multi-class, batch): ✓ Complete (3/3 problems)
+  - Loss Functions (MSE, Binary CE, Categorical CE): ✓ Complete (3/3 problems)
   - Data Pipeline (train_test_split, StandardScaler, cross-validation): ✓ Complete (3/3 problems)
   - Overfitting & Underfitting (bias-variance, gap detection, early stopping): ✓ Complete (3/3 problems)
   - Linear Regression (single & multiple features, MSE, R-squared): ✓ Complete (3/3 problems)
