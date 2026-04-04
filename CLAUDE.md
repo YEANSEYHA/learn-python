@@ -73,7 +73,11 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Activation Functions (ReLU, Sigmoid, Softmax): ✓ Complete (3/3 problems)
   - Forward Pass (single sample, multi-class, batch): ✓ Complete (3/3 problems)
   - Loss Functions (MSE, Binary CE, Categorical CE): ✓ Complete (3/3 problems)
-  - Backpropagation (chain rule, derivatives, training loop): In Progress
+  - Backpropagation (chain rule, derivatives, training loop): ✓ Complete (3/3 problems)
+  - Optimizers (SGD, Momentum, Adam): ✓ Complete (3/3 problems)
+  - Regularization (L2, Dropout): ✓ Complete (3/3 problems)
+  - Batch Normalization: ✓ Complete (3/3 problems)
+  - Full Neural Network from Scratch: In Progress
   - Data Pipeline (train_test_split, StandardScaler, cross-validation): ✓ Complete (3/3 problems)
   - Overfitting & Underfitting (bias-variance, gap detection, early stopping): ✓ Complete (3/3 problems)
   - Linear Regression (single & multiple features, MSE, R-squared): ✓ Complete (3/3 problems)
