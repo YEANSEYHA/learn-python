@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python module6/05_backprop.py)"
+      "Bash(python module6/05_backprop.py)",
+      "Bash(python3 -c ':*)"
     ]
   }
 }

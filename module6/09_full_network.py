@@ -121,3 +121,85 @@ WEIGHT SHAPES:
   b2: (1,)   ← one bias for output neuron
   Total: 6 + 3 + 3 + 1 = 13 learnable parameters
 """
+
+
+"""
+Problem 2: Training loop — teach the network!
+
+Re-initialize weights fresh, then train for 500 epochs with learning rate 0.5.
+
+Each epoch does this for EVERY sample:
+  1. Forward pass:
+     z1 = x @ W1 + b1
+     a1 = relu(z1)
+     z2 = a1 @ W2 + b2
+     pred = sigmoid(z2)
+
+  2. Loss (binary cross-entropy for one sample):
+     loss = -(label * np.log(pred + 1e-8) + (1 - label) * np.log(1 - pred + 1e-8))
+
+  3. Backprop (gradients):
+     dz2 = pred - label              # output error
+     dW2 = a1.reshape(-1, 1) * dz2   # gradient for W2
+     db2 = dz2                        # gradient for b2
+     da1 = (dz2 * W2.T).flatten()    # error passed back to hidden
+     dz1 = da1 * relu_derivative(z1) # through ReLU
+     dW1 = x.reshape(-1, 1) @ dz1.reshape(1, -1)  # gradient for W1
+     db1 = dz1                        # gradient for b1
+
+  4. Update weights:
+     W1 -= lr * dW1
+     b1 -= lr * db1
+     W2 -= lr * dW2
+     b2 -= lr * db2
+
+After training, print predictions for all samples.
+Print the loss every 100 epochs to see it decrease.
+"""
+
+
+# Re-initialize weights
+W1 = np.random.randn(2, 3) * 0.5
+b1 = np.zeros(3)
+W2 = np.random.randn(3, 1) * 0.5
+b2 = np.zeros(1)
+lr = 0.5
+
+for epoch in range(500):
+    total_loss = 0
+    for x, label in zip(X, y):    # ← loop over EVERY sample
+        # 1. Forward pass
+        z1 = x @ W1 + b1
+        a1 = relu(z1)
+        z2 = a1 @ W2 + b2
+        pred = sigmoid(z2)
+        
+        # 2. Loss (next step)
+        loss = -(label * np.log(pred + 1e-8) + (1 - label) * np.log(1 - pred + 1e-8))
+        total_loss += loss[0]
+        # 3. Backprop (next step)
+        dz2 = pred - label              # output error
+        dW2 = a1.reshape(-1, 1) * dz2   # gradient for W2
+        db2 = dz2                        # gradient for b2
+        da1 = (dz2 * W2.T).flatten()    # error passed back to hidden
+        dz1 = da1 * relu_derivative(z1) # through ReLU
+        dW1 = x.reshape(-1, 1) @ dz1.reshape(1, -1)  # gradient for W1
+        db1 = dz1  
+        # 4. Update (next step)
+        W1 -= lr * dW1
+        b1 -= lr * db1
+        W2 -= lr * dW2
+        b2 -= lr * db2
+
+    if epoch % 100 == 0:
+        print(f"Epoch {epoch}, loss: {total_loss:.4f}")
+
+# After training — print final predictions
+print("\nFinal predictions:")
+for x, label in zip(X, y):
+    z1 = x @ W1 + b1
+    a1 = relu(z1)
+    z2 = a1 @ W2 + b2
+    pred = sigmoid(z2)
+    predicted_class = 1 if pred >= 0.5 else 0
+    print(f"x: {x}, pred: {pred[0]:.4f}, class: {predicted_class}, true: {label}")
