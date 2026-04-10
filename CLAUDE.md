@@ -77,7 +77,7 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Optimizers (SGD, Momentum, Adam): ✓ Complete (3/3 problems)
   - Regularization (L2, Dropout): ✓ Complete (3/3 problems)
   - Batch Normalization: ✓ Complete (3/3 problems)
-  - Full Neural Network from Scratch: In Progress
+  - Full Neural Network from Scratch: Skipped for now (Steps 1-3 done, Step 4+ pending — will return later)
   - Data Pipeline (train_test_split, StandardScaler, cross-validation): ✓ Complete (3/3 problems)
   - Overfitting & Underfitting (bias-variance, gap detection, early stopping): ✓ Complete (3/3 problems)
   - Linear Regression (single & multiple features, MSE, R-squared): ✓ Complete (3/3 problems)
@@ -86,3 +86,5 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Decision Trees & Random Forests (Gini impurity, overfitting, ensembles): ✓ Complete (3/3 problems)
   - Support Vector Machines (scaling, C parameter, support vectors): ✓ Complete (3/3 problems)
   - Gradient Descent from Scratch (learning rate, linear regression, loss tracking): ✓ Complete (3/3 problems)
+- Module 7: In Progress (Deep Learning with PyTorch)
+  - Tensors (creation, NumPy conversion, autograd): ✓ Complete (3/3 problems)

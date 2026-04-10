@@ -3,7 +3,8 @@
     "allow": [
       "Bash(python module6/05_backprop.py)",
       "Bash(python3 -c ':*)",
-      "Bash(python module6/09b_full_network_practice.py)"
+      "Bash(python module6/09b_full_network_practice.py)",
+      "Bash(python module7/01_tensors.py)"
     ]
   }
 }
