@@ -88,3 +88,4 @@ Teaching the user Python from scratch, focused **only** on concepts needed for A
   - Gradient Descent from Scratch (learning rate, linear regression, loss tracking): ✓ Complete (3/3 problems)
 - Module 7: In Progress (Deep Learning with PyTorch)
   - Tensors (creation, NumPy conversion, autograd): ✓ Complete (3/3 problems)
+  - CNN for Image Classification (convolution, max pooling, flatten): ✓ Complete (3/3 problems)
